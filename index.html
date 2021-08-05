@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" href="logo.ico">
+    <title>Navbar Slider</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-top">
+            <div class="logo">
+                <img src="logo.ico" alt="" srcset="" height="70px" width="100px">
+                <h2>Shopping Bag </h2>
+            </div>
+
+            <div class="menu" id="menus">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+
+            <div class="menu" id="social" >
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+            </div>
+            <div class="bars">
+                <i class="fa fa-close" style="font-size: 40px; color: black;"></i>
+                <i class="fa fa-bars" style="font-size: 40px; color: black;" id="bar"></i>
+            </div>
+
+        </div>
+    </nav>
+
+</body>
+<script>
+    var close=document.querySelector('.bars i');
+    var bar=document.getElementById('bar')
+    var menu=document.getElementById('menus');
+    
+    bar.addEventListener("click",function(){
+        $('#menus').slideDown()
+        this.style.display="none";
+        close.style.display="block" 
+        $('#social').show()
+        $('.nav-top').css('flex-direction','column')
+    })
+
+    close.addEventListener("click",function(){
+        $('#menus').slideUp()
+        this.style.display="none";
+        bar.style.display="block" 
+        $('.nav-top').css('flex-direction','row')
+    })
+
+
+
+    close.style.display="none"
+    
+</script>
+</html>
